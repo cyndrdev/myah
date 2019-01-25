@@ -49,22 +49,25 @@ public class KnockableObject : MonoBehaviour
 
     private IEnumerator Knock(Vector2 direction)
     {
-        switch (UnityEngine.Random.Range(0, 2))
+        _isKnockable = false;
+        switch (Random.Range(0, 2))
         {
             case 0:
-                return Nudge(direction);
+                yield return Nudge(direction);
+                break;
 
             case 1:
-                return Wobble(direction);
+                yield return Wobble(direction);
+                break;
 
             default:
                 throw new System.Exception();
         }
+        _isKnockable = true;
     }
 
     private IEnumerator Nudge(Vector2 direction)
     {
-        _isKnockable = false;
         var startPos = transform.position;
         float progress = 0;
         float start = Time.time;
@@ -77,18 +80,16 @@ public class KnockableObject : MonoBehaviour
             float x = (progress / Mathf.PI) * nudgeDistance;
             float y = Mathf.Sin(progress) * nudgeBounceHeight;
 
-            transform.position = startPos + new Vector3(x, y) * direction.x;
+            transform.position = startPos + new Vector3(x * direction.x, y);
             yield return new WaitForEndOfFrame();
         }
 
         transform.position = new Vector3(transform.position.x, startPos.y);
-        _isKnockable = true;
     }
 
     private IEnumerator Wobble(Vector2 direction)
     {
         var startRotation = transform.rotation;
-        _isKnockable = false;
 
         float amplitude = wobbleAmplitude;
         float start = Time.time;
@@ -107,6 +108,5 @@ public class KnockableObject : MonoBehaviour
         }
 
         transform.rotation = startRotation;
-        _isKnockable = true;
     }
 }
