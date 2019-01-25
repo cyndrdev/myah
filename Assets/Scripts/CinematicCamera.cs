@@ -15,6 +15,9 @@ public class CinematicCamera : MonoBehaviour
     [SerializeField]
     private float _wobbleAmount = 0.25f;
 
+    [SerializeField]
+    private Vector3 _pan;
+
     private float _zAmount;
 
     private Vector3 _targetPosition;

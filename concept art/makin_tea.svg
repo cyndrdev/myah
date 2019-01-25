@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="249.1815mm"
+   height="140.71118mm"
+   viewBox="0 0 249.1815 140.71118"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -64,7 +64,7 @@
        x2="-30.427082"
        y2="8.8687506"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.68292686,0,0,0.94967368,10.765497,90.47519)" />
+       gradientTransform="matrix(0.68292686,0,0,0.94967368,46.748853,90.47519)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -73,9 +73,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="528.94241"
-     inkscape:cy="780.17632"
+     inkscape:zoom="0.5"
+     inkscape:cx="427.43332"
+     inkscape:cy="150.62928"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -87,7 +87,12 @@
      showguides="false"
      inkscape:lockguides="true"
      inkscape:measure-start="0,0"
-     inkscape:measure-end="0,0" />
+     inkscape:measure-end="0,0"
+     fit-margin-bottom="-1"
+     fit-margin-top="-1"
+     fit-margin-left="-1"
+     fit-margin-right="-1"
+     borderlayer="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -103,21 +108,22 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-5.9791193,-10.215239)">
     <rect
-       style="opacity:1;fill:#afebdf;fill-opacity:1;stroke:none;stroke-width:3.22300005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:1;fill:#afebdf;fill-opacity:1;stroke:none;stroke-width:3.01422596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect15321-8"
-       width="287.04745"
+       width="251.06412"
        height="141.65285"
-       x="-30.886824"
+       x="5.0965095"
        y="9.2152386"
-       ry="6.5632539" />
+       ry="0" />
     <rect
-       style="opacity:1;fill:#ddce87;fill-opacity:1;stroke:none;stroke-width:1.10893965;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:1;fill:#ddce87;fill-opacity:1;stroke:none;stroke-width:1.03734899;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect15321"
-       width="287.04745"
+       width="251.1815"
        height="16.769514"
-       x="-30.886831"
+       x="4.9791193"
        y="135.15691"
        ry="0.77698815" />
     <g
@@ -648,7 +654,7 @@
        id="rect15861"
        width="20.953934"
        height="64.673042"
-       x="-30.886831"
+       x="5.0965109"
        y="70.483856"
        ry="0.2821185" />
   </g>
