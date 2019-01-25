@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float force;
+    public float speed;
 
-    private Rigidbody2D _rb;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        _rb.AddForce(GetInput() * force);
+        transform.Translate(GetInput() * speed * Time.deltaTime);
     }
 
     private Vector2 GetInput()
     {
-        return new Vector2(
-            Input.GetAxis(GameConstants.Horizontal), 
-            Input.GetAxis(GameConstants.Vertical));
+        return new Vector2(Input.GetAxis(GameConstants.Horizontal), 0);
     }
 }
