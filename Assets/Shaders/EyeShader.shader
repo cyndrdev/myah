@@ -5,7 +5,7 @@
         _MainTex ("Texture", 2D) = "white" {}
 		_MainColor ("White Color", COLOR) = (1, 1, 1, 1)
 		_SubColor ("Pupil Color", COLOR) = (0, 0, 0, 1)
-		_SubRot	("Pupil Rotation", Range(0, 6.28318530718)) = 0
+		_SubRot	("Pupil Rotation", Range(-3.141592653, 3.141592653)) = 0
 		_SubSize ("Pupil Reduction", Range(0, 1)) = 0.7
 		_SubDist ("Pupil Distance", Range(0, 1)) = 0
     }
