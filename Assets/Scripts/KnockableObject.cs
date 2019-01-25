@@ -28,12 +28,24 @@ public class KnockableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(Wobble());
+        var player = collision.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            print("body knock");
+            StartCoroutine(Wobble());
+        }
+
+        var hand = collision.GetComponent<Hand>();
+        if (hand != null)
+        {
+            print("hand knock");
+            StartCoroutine(Wobble());
+        }
     }
 
     private IEnumerator Wobble()
     {
-        print("knocked!");
+        print("wobble");
         yield return null;
     }
 }
