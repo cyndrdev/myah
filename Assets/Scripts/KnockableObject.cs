@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnockableObject : MonoBehaviour
 {
     public float wobbleAmplitude;
+    public float wobbles;
 
     private float _angle;
 
