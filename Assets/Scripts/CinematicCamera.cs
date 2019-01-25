@@ -57,6 +57,6 @@ public class CinematicCamera : MonoBehaviour
         _currentPosition = Vector3.Lerp(_currentPosition, _targetPosition, _positionSpeed);
         Vector3 _currentWobble = Vector3.Lerp(_oldWobble, _targetWobble, Generics.EaseInOutQuad(_wobbleProgress / _wobbleRefresh));
 
-        transform.position = _currentPosition + _currentWobble;
+        transform.position = _currentPosition + _currentWobble + _pan;
     }
 }
