@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float force;
 
-    private void Update()
+    private Rigidbody2D _rb;
+
+    private void Start()
     {
-        transform.Translate(GetInput() * speed * Time.deltaTime);
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        _rb.AddForce(GetInput() * force);
     }
 
     private Vector2 GetInput()

@@ -42,7 +42,7 @@ public class CinematicCamera : MonoBehaviour
         UpdateWobble();
     }
 
-    void Update()
+    void LateUpdate()
     {
         _targetPosition = _target.transform.position;
         _targetPosition.z = _zAmount;
