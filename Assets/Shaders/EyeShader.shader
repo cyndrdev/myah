@@ -59,7 +59,7 @@
             {
                 // sample the texture
 
-				float2 subpos = _SubDist * float2(sin(_SubRot), cos(_SubRot));
+				float2 subpos = (_SubDist * (_SubSize)) * float2(sin(_SubRot), cos(_SubRot));
 				float2 eyeUV = (i.uv * (1 + _SubSize)) - subpos - float2(_SubSize / 2, _SubSize / 2);
 
                 fixed4 col = tex2D(_MainTex, i.uv);
