@@ -1592,6 +1592,9 @@ MonoBehaviour:
   wobbleSpeed: 10
   wobbleAmplitude: 30
   damping: 0.1
+  nudgeDistance: 1
+  nudgeBounceHeight: 1
+  nudgeSpeed: 10
 --- !u!1 &1974380435
 GameObject:
   m_ObjectHideFlags: 0

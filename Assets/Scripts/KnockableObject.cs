@@ -4,29 +4,18 @@ using UnityEngine;
 
 public class KnockableObject : MonoBehaviour
 {
+    [Header("Wobble stuff")]
     public float wobbleSpeed;
     public float wobbleAmplitude;
     [Range(0, 1)]
     public float damping;
 
+    [Header("Nudge stuff")]
+    public float nudgeDistance;
+    public float nudgeBounceHeight;
+    public float nudgeSpeed;
+
     private bool _isKnockable = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void LateUpdate()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -47,15 +36,53 @@ public class KnockableObject : MonoBehaviour
         if (player != null)
         {
             print("body knock");
-            StartCoroutine(Wobble(direction));
+            StartCoroutine(Knock(direction));
         }
 
         var hand = collider.GetComponent<Hand>();
         if (hand != null)
         {
             print("hand knock");
-            StartCoroutine(Wobble(direction));
+            StartCoroutine(Knock(direction));
         }
+    }
+
+    private IEnumerator Knock(Vector2 direction)
+    {
+        switch (UnityEngine.Random.Range(0, 2))
+        {
+            case 0:
+                return Nudge(direction);
+
+            case 1:
+                return Wobble(direction);
+
+            default:
+                throw new System.Exception();
+        }
+    }
+
+    private IEnumerator Nudge(Vector2 direction)
+    {
+        _isKnockable = false;
+        var startPos = transform.position;
+        float progress = 0;
+        float start = Time.time;
+
+        while (progress < Mathf.PI)
+        {
+            float time = Time.time - start;
+            progress = time * nudgeSpeed;
+
+            float x = (progress / Mathf.PI) * nudgeDistance;
+            float y = Mathf.Sin(progress) * nudgeBounceHeight;
+
+            transform.position = startPos + new Vector3(x, y) * direction.x;
+            yield return new WaitForEndOfFrame();
+        }
+
+        transform.position = new Vector3(transform.position.x, startPos.y);
+        _isKnockable = true;
     }
 
     private IEnumerator Wobble(Vector2 direction)
