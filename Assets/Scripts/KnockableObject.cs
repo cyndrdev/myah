@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class KnockableObject : MonoBehaviour
 {
+    public float wobbleSpeed;
     public float wobbleAmplitude;
-    public float wobbles;
+    [Range(0, 1)]
+    public float damping;
 
-    private float _angle;
+    private bool _isKnockable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,26 +28,58 @@ public class KnockableObject : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        var player = collision.GetComponent<PlayerController>();
+        if (!_isKnockable)
+            return;
+
+        Vector2 direction;
+        if (collider.transform.position.x < transform.position.x)
+        {
+            direction = Vector2.right;
+        }
+        else
+        {
+            direction = Vector2.left;
+        }
+
+        var player = collider.GetComponent<PlayerController>();
         if (player != null)
         {
             print("body knock");
-            StartCoroutine(Wobble());
+            StartCoroutine(Wobble(direction));
         }
 
-        var hand = collision.GetComponent<Hand>();
+        var hand = collider.GetComponent<Hand>();
         if (hand != null)
         {
             print("hand knock");
-            StartCoroutine(Wobble());
+            StartCoroutine(Wobble(direction));
         }
     }
 
-    private IEnumerator Wobble()
+    private IEnumerator Wobble(Vector2 direction)
     {
-        print("wobble");
-        yield return null;
+        var startRotation = transform.rotation;
+        _isKnockable = false;
+
+        float amplitude = wobbleAmplitude;
+        float start = Time.time;
+        float angle = 0f;
+
+        float threshold = 0.1f;
+        while (amplitude > threshold)
+        {
+            float time = Time.time - start;
+
+            angle = Mathf.Sin(time * wobbleSpeed) * amplitude * -direction.x;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            amplitude *= (1f - damping);
+            yield return new WaitForEndOfFrame();
+        }
+
+        transform.rotation = startRotation;
+        _isKnockable = true;
     }
 }
