@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.12374369"
-     inkscape:cx="-1573.0205"
-     inkscape:cy="548.0218"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="139.81052"
+     inkscape:cy="39.095431"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -221,7 +221,9 @@
     </g>
     <g
        transform="translate(-4.0250211,129.40001)"
-       id="g16548">
+       id="g16548"
+       inkscape:export-xdpi="450"
+       inkscape:export-ydpi="450">
       <rect
          ry="3.4095402"
          y="98.416069"
