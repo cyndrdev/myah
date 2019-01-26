@@ -65,4 +65,9 @@ public class CinematicCamera : MonoBehaviour
 
         transform.position = _currentPosition + _currentWobble + _pan;
     }
+
+    public void Snap()
+    {
+        _targetPosition = _currentPosition = _target.transform.position;
+    }
 }
