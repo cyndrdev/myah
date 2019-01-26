@@ -6,9 +6,25 @@ using UnityEngine;
 public class HandInteraction : MonoBehaviour
 {
     private List<Interactable> _interactableObjects = new List<Interactable>();
+    private FloppyArm _storage;
+
+    private void Start()
+    {
+        _storage = Game.Instance.Storage;
+    }
 
     public void Interact()
     {
+        if (_storage.HeldObject != null)
+        {
+            var o = _storage.HeldObject;
+            var pickup = _storage.HeldObject.GetComponent<Pickupable>();
+            pickup.Drop();
+
+            o.transform.position = transform.position;
+            return;
+        }
+
         if (!_interactableObjects.Any())
             return;
 

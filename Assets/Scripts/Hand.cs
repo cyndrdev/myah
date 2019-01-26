@@ -22,7 +22,6 @@ public class Hand : MonoBehaviour
         if (Input.GetKeyDown(interact))
         {
             _interaction.Interact();
-
         }
     }
 }
