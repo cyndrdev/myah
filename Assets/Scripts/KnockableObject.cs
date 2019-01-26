@@ -54,7 +54,6 @@ public class KnockableObject : MonoBehaviour
             print("hand knock");
             StartCoroutine(Knock(direction));
         }
-        _soundEngine.PlaySFX("bonk", true);
     }
 
     private IEnumerator Knock(Vector2 direction)
@@ -78,6 +77,7 @@ public class KnockableObject : MonoBehaviour
 
     private IEnumerator Nudge(Vector2 direction)
     {
+        _soundEngine.PlaySFX("bounce", true);
         var startPos = transform.position;
         float progress = 0;
         float start = Time.time;
@@ -99,6 +99,7 @@ public class KnockableObject : MonoBehaviour
 
     private IEnumerator Wobble(Vector2 direction)
     {
+        _soundEngine.PlaySFX("bonk", true);
         var startRotation = transform.rotation;
 
         float amplitude = wobbleAmplitude;

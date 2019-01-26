@@ -1085,6 +1085,7 @@ MonoBehaviour:
   musicFadeTime: 3
   soundEffects:
   - {fileID: 8300000, guid: 6af48d7b02e71404d86a59d57ae25568, type: 3}
+  - {fileID: 8300000, guid: 34739ecc280c7ac418cf6a6d026edfee, type: 3}
   musicTracks:
   - {fileID: 8300000, guid: f868ceffe000f49429872106ab78d180, type: 3}
 --- !u!82 &310842157

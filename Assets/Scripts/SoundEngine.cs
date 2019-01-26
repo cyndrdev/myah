@@ -69,7 +69,7 @@ public class SoundEngine : MonoBehaviour
     {
         AudioSource audioSource = sfxObj.GetComponent<AudioSource>();
         audioSource.Play();
-        yield return new WaitForSecondsRealtime(audioSource.clip.length * _sfxPitchVariance);
+        yield return new WaitForSecondsRealtime(audioSource.clip.length * (1f + _sfxPitchVariance));
         Destroy(sfxObj);
     }
 
