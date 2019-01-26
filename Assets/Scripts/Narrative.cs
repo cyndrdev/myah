@@ -22,6 +22,6 @@ public class Narrative : MonoBehaviour
     {
         Position++;
         StoryProgressed.Invoke(Position);
-        print("story progressed to position " + Position);
+        //print("story progressed to position " + Position);
     }
 }

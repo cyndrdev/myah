@@ -819,7 +819,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2771582735197069964}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &201208903
+--- !u!50 &201208905
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -2895,6 +2895,7 @@ Transform:
   - {fileID: 755590267}
   - {fileID: 310842155}
   - {fileID: 1156367769}
+  - {fileID: 1979726248}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4344,6 +4345,50 @@ Transform:
   m_Father: {fileID: 557831842}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1979726247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979726248}
+  - component: {fileID: 1979726249}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979726248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979726247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1231302068}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1979726249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979726247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f16b92ac62750d4d873fa1703b981a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 4900000, guid: e24359d4555a9434cb65e5f5b8594b22, type: 3}
 --- !u!1 &2117427092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,6 +4593,11 @@ PrefabInstance:
     - target: {fileID: 2771582736454489035, guid: b95436c6df6f5f24a9a3a17f9305f199,
         type: 3}
       propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 756994758145649983, guid: b95436c6df6f5f24a9a3a17f9305f199,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
