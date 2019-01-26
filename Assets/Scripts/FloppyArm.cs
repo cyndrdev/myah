@@ -55,8 +55,11 @@ public class FloppyArm : MonoBehaviour
 
         var sprite = obj.GetComponent<SpriteRenderer>();
         sprite.sortingLayerName = GameConstants.Player;
+        _originalSortOrder = sprite.sortingOrder;
         sprite.sortingOrder = 20;
     }
+
+    private int _originalSortOrder;
 
     public GameObject RemoveObject()
     {
@@ -72,7 +75,7 @@ public class FloppyArm : MonoBehaviour
 
         var sprite = o.GetComponent<SpriteRenderer>();
         sprite.sortingLayerName = GameConstants.Pickups;
-        sprite.sortingOrder = -1;
+        sprite.sortingOrder = _originalSortOrder;
 
         return o;
     }

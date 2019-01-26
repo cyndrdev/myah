@@ -28,7 +28,10 @@ public class HandInteraction : MonoBehaviour
         if (!_interactableObjects.Any())
             return;
 
-        _interactableObjects.First().Interact();
+        _interactableObjects
+            .OrderBy(go => Vector3.Distance(go.transform.position, transform.position))
+            .First()
+            .Interact();
    }
 
     private void OnTriggerEnter2D(Collider2D other)

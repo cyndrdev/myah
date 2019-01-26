@@ -37,9 +37,9 @@ public class MakeTea : MonoBehaviour
         _narrative.StoryProgressed.AddListener(OnProgress);
     }
 
-    public void Complete()
+    public void InteractFalseKettle()
     {
-        
+        print("oh, no! we can't use *that* kettle. it's out of date!");
     }
 
     private void OnProgress(int index)
