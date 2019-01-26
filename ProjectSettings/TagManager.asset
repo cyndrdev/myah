@@ -42,9 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Darkness
-    uniqueID: 2728459011
-    locked: 0
   - name: Furniture
     uniqueID: 3456481529
     locked: 0
@@ -53,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1202749687
+    locked: 0
+  - name: Darkness
+    uniqueID: 2728459011
     locked: 0
