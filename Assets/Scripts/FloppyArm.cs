@@ -12,6 +12,7 @@ public class FloppyArm : MonoBehaviour
 
     public GameObject HeldObject { get; private set; }
 
+
     void Start()
     {
         _line = GetComponent<LineRenderer>();
@@ -51,6 +52,10 @@ public class FloppyArm : MonoBehaviour
 
         var rb = obj.GetComponent<Rigidbody2D>();
         rb.simulated = false;
+
+        var sprite = obj.GetComponent<SpriteRenderer>();
+        sprite.sortingLayerName = GameConstants.Player;
+        sprite.sortingOrder = 20;
     }
 
     public GameObject RemoveObject()
@@ -64,6 +69,10 @@ public class FloppyArm : MonoBehaviour
 
         var rb = o.GetComponent<Rigidbody2D>();
         rb.simulated = true;
+
+        var sprite = o.GetComponent<SpriteRenderer>();
+        sprite.sortingLayerName = GameConstants.Pickups;
+        sprite.sortingOrder = -1;
 
         return o;
     }
