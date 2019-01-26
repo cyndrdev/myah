@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
 
         // make legs walk
         float stepSizeMod = Mathf.SmoothStep(0f, stepSize, Mathf.Abs(_rb.velocity.x) / 5f);
-        Debug.Log(stepSizeMod);
         float legAmt = (1f + Mathf.Sin(Time.time * 2 * Mathf.PI * stepsPerSecond)) / 2f;
         float leftLegHeight = Mathf.Lerp(_leftFullPos, _leftFullPos + stepSizeMod, legAmt);
         float rightLegHeight = Mathf.Lerp(_rightFullPos, _rightFullPos + stepSizeMod, 1f - legAmt);
