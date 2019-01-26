@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="makin_tea.svg">
+   sodipodi:docname="makin_tea.svg"
+   inkscape:export-filename="C:\Users\cyndr\bitmap.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72">
   <defs
      id="defs2">
     <linearGradient
@@ -73,9 +76,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="427.43332"
-     inkscape:cy="150.62928"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="188.9777"
+     inkscape:cy="249.10781"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -378,6 +381,9 @@
              inkscape:connector-curvature="0" />
         </g>
       </g>
+      <g
+         transform="translate(78.34871,-79.23294)"
+         id="g965-8" />
     </g>
     <g
        id="g15636"
