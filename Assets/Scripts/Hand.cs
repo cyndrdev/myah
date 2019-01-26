@@ -1,45 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-    public float armLength;
-    [Range(0, 1)]
-    public float moveSpeed;
+    public float interactionDistance;
+    public KeyCode interact;
 
     private Rigidbody2D _rb;
+    private HandInteraction _interaction;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _interaction = GetComponentInChildren<HandInteraction>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 targetPos;
-
-        var mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var originPos = (Vector2)transform.parent.position;
-        var toMouse = mousePos - originPos;
-        var dir = toMouse.normalized;
-
-        if (toMouse.magnitude < armLength)
+        if (Input.GetKeyDown(interact))
         {
-            targetPos = mousePos;
+            _interaction.Interact();
         }
-        else
-        {
-            targetPos = originPos + dir * armLength;
-        }
-
-        transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed);
     }
 }
