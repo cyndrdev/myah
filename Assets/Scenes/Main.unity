@@ -2295,6 +2295,10 @@ MonoBehaviour:
   rightSocket: {fileID: 665435988}
   interactionArm: {fileID: 595353921}
   floppyArm: {fileID: 308034451}
+  leftLeg: {fileID: 26606802}
+  rightLeg: {fileID: 1736626250}
+  stepSize: 0.5
+  stepsPerSecond: 1
 --- !u!50 &755590270
 Rigidbody2D:
   serializedVersion: 4

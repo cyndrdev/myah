@@ -12,12 +12,25 @@ public class PlayerController : MonoBehaviour
     public Transform interactionArm;
     public Transform floppyArm;
 
+    [Header("Legs")]
+    public Transform leftLeg;
+    public Transform rightLeg;
+
+    public float stepSize;
+    public float stepsPerSecond;
+
+    private float _leftFullPos;
+    private float _rightFullPos;
+
     private Rigidbody2D _rb;
     private bool _facingRight;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+
+        _leftFullPos = leftLeg.localPosition.y;
+        _rightFullPos = rightLeg.localPosition.y;
     }
 
     private void FixedUpdate()
@@ -41,6 +54,16 @@ public class PlayerController : MonoBehaviour
             SetArmSocket(floppyArm, leftSocket);
             _facingRight = false;
         }
+
+        // make legs walk
+        float stepSizeMod = Mathf.SmoothStep(0f, stepSize, Mathf.Abs(_rb.velocity.x) / 5f);
+        Debug.Log(stepSizeMod);
+        float legAmt = (1f + Mathf.Sin(Time.time * 2 * Mathf.PI * stepsPerSecond)) / 2f;
+        float leftLegHeight = Mathf.Lerp(_leftFullPos, _leftFullPos + stepSizeMod, legAmt);
+        float rightLegHeight = Mathf.Lerp(_rightFullPos, _rightFullPos + stepSizeMod, 1f - legAmt);
+
+        leftLeg.localPosition = new Vector3(leftLeg.localPosition.x, leftLegHeight);
+        rightLeg.localPosition = new Vector3(rightLeg.localPosition.x, rightLegHeight);
    }
 
     private void SetArmSocket(Transform arm, Transform socket)
