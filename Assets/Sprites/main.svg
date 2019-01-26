@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
@@ -17,7 +18,30 @@
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="main.svg">
   <defs
-     id="defs15871" />
+     id="defs15871">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient15867"
+       id="linearGradient15869"
+       x1="-61.647919"
+       y1="8.8687515"
+       x2="-30.427082"
+       y2="8.8687506"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.68292685,0,0,0.94967368,66.454954,47.319473)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient15867">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop15863" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop15865" />
+    </linearGradient>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,9 +49,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="149.28772"
-     inkscape:cy="473.27894"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="104.85459"
+     inkscape:cy="418.46357"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -353,6 +377,23 @@
        x="9.9515343"
        y="141.43498"
        ry="9.4494047"
+       inkscape:export-xdpi="450"
+       inkscape:export-ydpi="450" />
+    <rect
+       style="opacity:1;fill:url(#linearGradient15869);fill-opacity:1;stroke:none;stroke-width:1.20799625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect15861"
+       width="20.953934"
+       height="64.673042"
+       x="24.80261"
+       y="27.328135"
+       ry="0.2821185"
+       inkscape:export-xdpi="450"
+       inkscape:export-ydpi="450" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path896-0"
+       d="M 23.920622,20.843762 V 4.0057785"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.965;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.93467337"
        inkscape:export-xdpi="450"
        inkscape:export-ydpi="450" />
   </g>
