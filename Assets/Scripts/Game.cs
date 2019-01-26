@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
 
     public GameObject player;
     public GameObject interactableObjectsParent;
+    public GameObject story;
 
     public FloppyArm Storage { get; private set; }
 

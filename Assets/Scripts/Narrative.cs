@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Narrative : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int Position { get; private set; } = 0;
+
+    public class StoryProgressionEvent : UnityEvent<int> { }
+    public StoryProgressionEvent StoryProgressed { get; private set; }
+        = new StoryProgressionEvent();
+
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ProgressStory();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ProgressStory()
     {
-        
+        Position++;
+        StoryProgressed.Invoke(Position);
+        print("story progressed to position " + Position);
     }
 }
