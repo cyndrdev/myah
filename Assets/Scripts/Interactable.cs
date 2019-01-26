@@ -4,7 +4,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
 public class Interactable : MonoBehaviour
 {
-    public bool active;
+    public bool active = true;
     public UnityEvent OnInteract = new UnityEvent();
 
     private Collider2D _collider;
