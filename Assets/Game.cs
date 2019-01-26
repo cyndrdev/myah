@@ -6,7 +6,7 @@ public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
 
-    public GameObject player;
+    private GameObject player;
     public GameObject interactableObjectsParent;
 
     public FloppyArm Storage { get; private set; }
@@ -17,6 +17,7 @@ public class Game : MonoBehaviour
             throw new System.Exception();
 
         Instance = this;
+        player = GameObject.FindGameObjectWithTag(GameConstants.Player);
 
         Storage = player.GetComponentInChildren<FloppyArm>();
     }
