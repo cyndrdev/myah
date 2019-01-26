@@ -1,24 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 public class MakeTea : MonoBehaviour
 {
+    public string title;
+    public int start;
+
     public GameObject[] ingredients;
+    public string[] questItems;
     public float proximity;
     public GameObject hammer;
     public GameObject tea;
 
+    private bool _started;
     private bool _canComplete;
     private bool _completed;
+    private QuestView _questView;
+    private Narrative _narrative;
 
     void Start()
     {
-        
+        _questView = Game.Instance.UI.QuestView;
+
+        _narrative = Game.Instance.Narrative;
+        _narrative.StoryProgressed.AddListener(OnProgress);
+    }
+
+    private void OnProgress(int index)
+    {
+        if (index == start)
+        {
+            _started = true;
+            Game.Instance.UI.ShowQuestView();
+            _questView.SetTitle(title);
+            _questView.SetQuestItems(questItems);
+        }
     }
 
     void LateUpdate()
+    {
+        if (!_started)
+            return;
+
+        UpdateProgress();
+    }
+
+    private void UpdateProgress()
     {
         if (_completed)
             return;
@@ -38,6 +65,7 @@ public class MakeTea : MonoBehaviour
 
             Instantiate(tea, avgPos, Quaternion.identity, null);
             _completed = true;
+            Game.Instance.UI.HideQuestView();
         }
     }
 

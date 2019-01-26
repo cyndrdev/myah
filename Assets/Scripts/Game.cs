@@ -9,9 +9,11 @@ public class Game : MonoBehaviour
     public GameObject player;
     public GameObject interactableObjectsParent;
     public GameObject story;
+    public GameObject ui;
 
     public FloppyArm Storage { get; private set; }
     public Narrative Narrative { get; private set; }
+    public NarrativeUI UI { get; private set; }
 
     void Awake()
     {
@@ -22,5 +24,6 @@ public class Game : MonoBehaviour
 
         Storage = player.GetComponentInChildren<FloppyArm>();
         Narrative = story.GetComponent<Narrative>();
+        UI = ui.GetComponent<NarrativeUI>();
     }
 }
