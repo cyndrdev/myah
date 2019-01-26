@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CinematicCamera : MonoBehaviour
 {
+    [SerializeField]
     private GameObject _target;
 
     [SerializeField]
@@ -39,7 +40,6 @@ public class CinematicCamera : MonoBehaviour
 
     void Start()
     {
-        _target = GameObject.FindGameObjectWithTag(GameConstants.Player);
         if (_target == null)
             throw new System.Exception();
 
