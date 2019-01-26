@@ -8,8 +8,10 @@ public class MakeTea : MonoBehaviour
     public GameObject[] ingredients;
     public float proximity;
     public GameObject hammer;
+    public GameObject tea;
 
     private bool _canComplete;
+    private bool _completed;
 
     void Start()
     {
@@ -18,12 +20,30 @@ public class MakeTea : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 avgPos = Vector3.zero;
-        for (int i = 0; i < ingredients.Length; i++)
+        if (_completed)
+            return;
+
+        CheckReady();
+
+        if (!_canComplete)
+            return;
+
+        var avgPos = GetAveragePosition();
+        if (Vector3.Distance(hammer.transform.position, avgPos) < proximity)
         {
-            avgPos += ingredients[i].transform.position;
+            foreach (var ingredient in ingredients)
+            {
+                Destroy(ingredient);
+            }
+
+            Instantiate(tea, avgPos, Quaternion.identity, null);
+            _completed = true;
         }
-        avgPos /= ingredients.Length;
+    }
+
+    private void CheckReady()
+    {
+        var avgPos = GetAveragePosition();
 
         bool ready = ingredients.All(i =>
         {
@@ -40,5 +60,15 @@ public class MakeTea : MonoBehaviour
             _canComplete = false;
             print("no longer ready :(");
         }
+    }
+
+    private Vector3 GetAveragePosition()
+    {
+        Vector3 avgPos = Vector3.zero;
+        for (int i = 0; i < ingredients.Length; i++)
+        {
+            avgPos += ingredients[i].transform.position;
+        }
+        return avgPos / ingredients.Length;
     }
 }
