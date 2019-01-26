@@ -41,7 +41,7 @@ public class HandInteraction : MonoBehaviour
             return;
 
         _interactableObjects.Add(interactable);
-        print("added " + interactable.ToString());
+        //print("added " + interactable.ToString());
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -54,6 +54,6 @@ public class HandInteraction : MonoBehaviour
             return;
 
         _interactableObjects.Remove(interactable);
-        print("removed " + interactable.ToString());
+        //print("removed " + interactable.ToString());
     }
 }
