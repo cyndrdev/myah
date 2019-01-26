@@ -6,7 +6,8 @@ public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
 
-    public GameObject player;
+    public GameObject soup;
+    public GameObject noodle;
     public GameObject interactableObjectsParent;
     public GameObject story;
     public GameObject ui;
@@ -22,7 +23,7 @@ public class Game : MonoBehaviour
 
         Instance = this;
 
-        Storage = player.GetComponentInChildren<FloppyArm>();
+        Storage = soup.GetComponentInChildren<FloppyArm>();
         Narrative = story.GetComponent<Narrative>();
         UI = ui.GetComponent<NarrativeUI>();
     }

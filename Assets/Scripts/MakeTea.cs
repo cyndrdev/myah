@@ -1,22 +1,33 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MakeTea : MonoBehaviour
 {
+    private enum Stage
+    {
+        Inactive,
+        GatherIngredients,
+        MakeTea,
+        GiveTea,
+        Completed
+    }
+    private Stage _stage = Stage.Inactive;
+
     public string title;
     public int start;
 
     public GameObject[] ingredients;
-    public string[] questItems;
     public float proximity;
+    public float noodleProximity;
     public GameObject hammer;
     public GameObject tea;
 
-    private bool _started;
-    private bool _canComplete;
-    private bool _completed;
+    public UnityEvent Completed = new UnityEvent();
+
     private QuestView _questView;
     private Narrative _narrative;
+    private GameObject _tea;
 
     void Start()
     {
@@ -26,36 +37,88 @@ public class MakeTea : MonoBehaviour
         _narrative.StoryProgressed.AddListener(OnProgress);
     }
 
+    public void Complete()
+    {
+        
+    }
+
     private void OnProgress(int index)
     {
         if (index == start)
         {
-            _started = true;
+            _stage = Stage.GatherIngredients;
             Game.Instance.UI.ShowQuestView();
             _questView.SetTitle(title);
-            _questView.SetQuestItems(questItems);
+
+            ShowIngredients();
         }
+    }
+
+    private void ShowIngredients()
+    {
+        var questItems = new[]
+                    {
+                "Get kettle",
+                "Get milk",
+                "Get teabags",
+                "Get mugs"
+            };
+        _questView.SetQuestItems(questItems);
+    }
+
+    private void ShowHammer()
+    {
+        var questItems = new[]
+        {
+            "Get the right tool for the job"
+        };
+        _questView.SetQuestItems(questItems);
+    }
+
+    private void ShowFinish()
+    {
+        var questItems = new[] { "Take the tea to Noodle" };
+        _questView.SetQuestItems(questItems);
     }
 
     void LateUpdate()
     {
-        if (!_started)
-            return;
-
         UpdateProgress();
     }
 
     private void UpdateProgress()
     {
-        if (_completed)
+        switch (_stage)
+        {
+            case Stage.Inactive:
+            case Stage.Completed:
+                return;
+
+            case Stage.GatherIngredients:
+                CheckReadyToMakeTea();
+                break;
+            case Stage.MakeTea:
+                TryMakeTea();
+                break;
+            case Stage.GiveTea:
+                TryGiveTea();
+                break;
+            default:
+                throw new System.Exception();
+        }
+    }
+
+    private void TryMakeTea()
+    {
+        if (!IngredientsTogether())
+        {
+            _stage = Stage.GatherIngredients;
+            //print("no longer ready :(");
+            ShowIngredients();
             return;
+        }
 
-        CheckReady();
-
-        if (!_canComplete)
-            return;
-
-        var avgPos = GetAveragePosition();
+        var avgPos = GetAverageIngredientsPosition();
         if (Vector3.Distance(hammer.transform.position, avgPos) < proximity)
         {
             foreach (var ingredient in ingredients)
@@ -63,34 +126,51 @@ public class MakeTea : MonoBehaviour
                 Destroy(ingredient);
             }
 
-            Instantiate(tea, avgPos, Quaternion.identity, null);
-            _completed = true;
+            _tea = Instantiate(tea, avgPos, Quaternion.identity, null);
+            _stage = Stage.GiveTea;
+            ShowFinish();
+        }
+    }
+
+    private bool IngredientsTogether()
+    {
+        var avgPos = GetAverageIngredientsPosition();
+        return ingredients.All(i =>
+        {
+            return Vector3.Distance(i.transform.position, avgPos) < proximity;
+        });
+    }
+
+    private void CheckReadyToMakeTea()
+    {
+        if (IngredientsTogether())
+        {
+            _stage = Stage.MakeTea;
+            //print("ready!");
+            ShowHammer();
+        }
+    }
+
+    private void TryGiveTea()
+    {
+        if (_tea == null)
+            throw new System.Exception();
+
+        var noodle = Game.Instance.noodle;
+
+        if (Vector3.Distance(_tea.transform.position, noodle.transform.position) < proximity)
+        {
+            var hand = noodle.GetComponent<Noodle>().hand;
+            _tea.transform.SetParent(hand);
+            _tea.transform.localPosition = Vector3.zero;
+            _tea.GetComponent<Rigidbody2D>().simulated = false;
+
+            _stage = Stage.Completed;
             Game.Instance.UI.HideQuestView();
         }
     }
 
-    private void CheckReady()
-    {
-        var avgPos = GetAveragePosition();
-
-        bool ready = ingredients.All(i =>
-        {
-            return Vector3.Distance(i.transform.position, avgPos) < proximity;
-        });
-
-        if (ready && !_canComplete)
-        {
-            _canComplete = true;
-            print("ready!");
-        }
-        else if (!ready && _canComplete)
-        {
-            _canComplete = false;
-            print("no longer ready :(");
-        }
-    }
-
-    private Vector3 GetAveragePosition()
+    private Vector3 GetAverageIngredientsPosition()
     {
         Vector3 avgPos = Vector3.zero;
         for (int i = 0; i < ingredients.Length; i++)
