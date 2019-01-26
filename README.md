@@ -1,6 +1,10 @@
 # Make Yourself At Home!
 **Make Yourself At Home!** is a game of some description, made by Cinder Foster-Smith and Cat Flynn. It was made in 48 hours during Global Game Jam 2019.
 
+## Software used
+* Unity Engine
+* Inkscape
+
 ## Attribution
 ### Music
 * "Lobby Time" - By Kevin MacLeod (Incompetech Inc.)
