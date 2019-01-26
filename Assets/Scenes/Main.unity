@@ -1380,6 +1380,8 @@ MonoBehaviour:
   _wobbleRefresh: 5
   _wobbleAmount: 0.25
   _pan: {x: 0, y: 6, z: 0}
+  _leftClamp: -6.5
+  _rightClamp: 6.5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

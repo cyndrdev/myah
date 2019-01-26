@@ -18,6 +18,11 @@ public class CinematicCamera : MonoBehaviour
     [SerializeField]
     private Vector3 _pan;
 
+    [SerializeField]
+    private float _leftClamp;
+    [SerializeField]
+    private float _rightClamp;
+
     private float _zAmount;
 
     private Vector3 _targetPosition;
@@ -46,6 +51,7 @@ public class CinematicCamera : MonoBehaviour
     {
         _targetPosition = _target.transform.position;
         _targetPosition.z = _zAmount;
+        _targetPosition.x = Mathf.Clamp(_targetPosition.x, _leftClamp, _rightClamp);
 
         _wobbleProgress += Time.deltaTime;
         if (_wobbleProgress > _wobbleRefresh)
