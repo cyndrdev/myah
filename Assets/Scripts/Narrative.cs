@@ -8,8 +8,7 @@ public class Narrative : MonoBehaviour
     public int Position { get; private set; } = 0;
 
     public class StoryProgressionEvent : UnityEvent<int> { }
-    public StoryProgressionEvent StoryProgressed { get; private set; }
-        = new StoryProgressionEvent();
+    public UnityEvent<int> StoryProgressed = new StoryProgressionEvent();
 
     private void Update()
     {

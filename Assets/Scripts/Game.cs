@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     public GameObject story;
 
     public FloppyArm Storage { get; private set; }
+    public Narrative Narrative { get; private set; }
 
     void Awake()
     {
@@ -20,5 +21,6 @@ public class Game : MonoBehaviour
         Instance = this;
 
         Storage = player.GetComponentInChildren<FloppyArm>();
+        Narrative = story.GetComponent<Narrative>();
     }
 }
