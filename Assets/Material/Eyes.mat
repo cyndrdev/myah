@@ -70,9 +70,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SubDist: 0.774
+    - _SubDist: 1
     - _SubRot: 2.58
-    - _SubSize: 0.605
+    - _SubSize: 0.29
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
