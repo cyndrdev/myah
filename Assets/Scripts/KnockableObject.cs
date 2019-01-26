@@ -15,7 +15,16 @@ public class KnockableObject : MonoBehaviour
     public float nudgeBounceHeight;
     public float nudgeSpeed;
 
+    private SoundEngine _soundEngine;
+
     private bool _isKnockable = true;
+
+    private void Start()
+    {
+        _soundEngine = GameObject.FindGameObjectWithTag(GameConstants.Persistent).GetComponentInChildren<SoundEngine>();
+        if (_soundEngine == null)
+            throw new System.Exception();
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -45,6 +54,7 @@ public class KnockableObject : MonoBehaviour
             print("hand knock");
             StartCoroutine(Knock(direction));
         }
+        _soundEngine.PlaySFX("bonk", true);
     }
 
     private IEnumerator Knock(Vector2 direction)

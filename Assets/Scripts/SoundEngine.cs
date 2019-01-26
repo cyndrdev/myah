@@ -13,7 +13,7 @@ public class SoundEngine : MonoBehaviour
     float _musicVolume = 1.0f;
 
     [SerializeField]
-    float _sfxPitchVariance = .4f;
+    float _sfxPitchVariance = 0.4f;
 
     [SerializeField]
     float musicFadeTime = 3f;
@@ -92,8 +92,8 @@ public class SoundEngine : MonoBehaviour
 
         float pitchMultiplier = varyPitch
             ? Random.Range(
-                1f - (_sfxPitchVariance / 2f),
-                1f + (_sfxPitchVariance / 2f))
+                1f / (1f + _sfxPitchVariance),
+                1f * (1f + _sfxPitchVariance))
             : 1f;
         AudioSource audioSource = audioObj.AddComponent<AudioSource>();
         audioSource.clip = clip;
