@@ -1,8 +1,29 @@
 1	soup	...and then I said, "that's not even her paintbrush!"
 2	noodle	what, no way?
-3	soup	yea, it surely was a tuesday to remember.
-4	soup	ah, it's so lovely to see you again, noodle!
-5	soup	can i offer you a cup of tea?
-6	noodle	oh, yes please, that would be lovely!
-7	soup	milk, sugar?
-8	noodle	oh, just some milk please - some dumb quip about sugar being bad
+3	soup	Yeah, it surely was a tuesday to remember.
+4	soup	Ah, I've missed you so much, noodle!
+5	noodle	Awh, I've missed you too!
+6	soup	So, did you find the place alright?
+7	noodle	Yeah, it wasn't too difficult.
+8	noodle	This place really is lovely, certainly a step up from your last flat!
+9	noodle	I wish i had a place like this...
+10	soup	I'm glad you like it!
+11	soup	It's taken quite a lot of work to get it to this stage.
+12	soup	I even watched an online video course on feng shui!
+13	noodle	That's amazing! Was it useful?
+14	soup	Well, I'll be honest, I fell asleep in the middle of the third episode...
+15	noodle	Oh dear...
+16	soup	So, how've you been holding up? Uni treating you well?
+17	noodle	Well...
+18	noodle	...
+19	soup	Is everything okay?
+20	noodle	Yeah, sorry.
+21	noodle	Things aren't exactly going the way I imagined they would...
+22	soup	Ah, that's bad to hear.
+23	soup	Do you wanna talk about it?
+24	noodle	Eh, in a bit...
+25	noodle	Could we put some music on first?
+26	soup	Sure thing!
+27	soup	I still have that record we used to blast from when we were teens.
+28	noodle	Ah, that'd be perfect!
+29	soup	Cool, lemme go grab it.
