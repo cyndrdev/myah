@@ -1,8 +1,8 @@
-1	a	...and then I said, that's not even her paintbrush!
-2	b	what, no way?
-3	a	yes, it surely was a tuesday to remember.
-4	a	ah, it's so lovely to see you again, b!
-5	a	can i offer you a cup of tea?
-6	b	oh, yes please, that would be lovely!
-7	a	milk, sugar?
-8	b	oh, just some milk please - some dumb quip about sugar being bad
+1	soup	...and then I said, "that's not even her paintbrush!"
+2	noodle	what, no way?
+3	soup	yea, it surely was a tuesday to remember.
+4	soup	ah, it's so lovely to see you again, noodle!
+5	soup	can i offer you a cup of tea?
+6	noodle	oh, yes please, that would be lovely!
+7	soup	milk, sugar?
+8	noodle	oh, just some milk please - some dumb quip about sugar being bad
