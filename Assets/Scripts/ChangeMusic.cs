@@ -21,6 +21,7 @@ public class ChangeMusic : MonoBehaviour
     private QuestView _questView;
     private DialogueView _dialogueView;
     private Narrative _narrative;
+    private SoundEngine _soundEngine;
 
     void Start()
     {
@@ -29,6 +30,8 @@ public class ChangeMusic : MonoBehaviour
 
         _narrative = Game.Instance.Narrative;
         _narrative.StoryProgressed.AddListener(OnProgress);
+
+        _soundEngine = GameObject.FindGameObjectWithTag(GameConstants.Persistent).GetComponentInChildren<SoundEngine>();
     }
 
     private void LateUpdate()
@@ -82,6 +85,7 @@ public class ChangeMusic : MonoBehaviour
             print("playing record!");
 
             Game.Instance.UI.HideQuestView();
+            _soundEngine.PlayMusic("Deuces");
             
             _stage = Stage.Completed;
             _narrative.ProgressStory();
