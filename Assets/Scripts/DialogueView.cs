@@ -8,6 +8,8 @@ public class DialogueView : MonoBehaviour
 
     public bool IsShowingText => !string.IsNullOrWhiteSpace(text.text);
 
+    public GameObject _background;
+
     // i heard you like text fam
     public Text text;
     private void Awake() => Clear();
@@ -20,6 +22,7 @@ public class DialogueView : MonoBehaviour
     public void ShowText(string text)
     {
         _timeout = timeout;
+        _background.SetActive(true);
 
         Text(text);
         StartCoroutine(ClearTimeout());
@@ -39,6 +42,7 @@ public class DialogueView : MonoBehaviour
         }
 
         Clear();
+        _background.SetActive(false);
         _timingOut = false;
     }
 }
