@@ -16,6 +16,7 @@ public class MakeTea : MonoBehaviour
 
     public string title;
     public int start;
+    public string falseKettleMessage;
 
     public GameObject[] ingredients;
     public float proximity;
@@ -26,12 +27,14 @@ public class MakeTea : MonoBehaviour
     public UnityEvent Completed = new UnityEvent();
 
     private QuestView _questView;
+    private DialogueView _dialogueView;
     private Narrative _narrative;
     private GameObject _tea;
 
     void Start()
     {
         _questView = Game.Instance.UI.QuestView;
+        _dialogueView = Game.Instance.UI.DialogueView;
 
         _narrative = Game.Instance.Narrative;
         _narrative.StoryProgressed.AddListener(OnProgress);
@@ -39,7 +42,7 @@ public class MakeTea : MonoBehaviour
 
     public void InteractFalseKettle()
     {
-        print("oh, no! we can't use *that* kettle. it's out of date!");
+        _dialogueView.ShowText(falseKettleMessage);
     }
 
     private void OnProgress(int index)
