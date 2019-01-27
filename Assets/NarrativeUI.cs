@@ -5,12 +5,15 @@ using UnityEngine;
 public class NarrativeUI : MonoBehaviour
 {
     public GameObject questView;
+    public GameObject dialogueView;
 
     public QuestView QuestView { get; private set; }
+    public DialogueView DialogueView { get; private set; }
 
     private void Awake()
     {
         QuestView = questView.GetComponent<QuestView>();
+        DialogueView = dialogueView.GetComponent<DialogueView>();
     }
 
     private void Start()

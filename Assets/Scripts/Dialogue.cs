@@ -11,13 +11,16 @@ public class Dialogue : MonoBehaviour
     }
 
     public TextAsset script;
+    public KeyCode advanceDialogue;
 
     private DialogueLine[] _lines;
     private Narrative _narrative;
     private int _lastIndex;
+    private DialogueView _dialogueView;
 
     void Start()
     {
+        _dialogueView = Game.Instance.UI.DialogueView;
         _narrative = Game.Instance.Narrative;
 
         var lines = script.text.Split('\n');
@@ -39,22 +42,41 @@ public class Dialogue : MonoBehaviour
         }
         _lastIndex = _lines.Select(l => l.index).Max();
 
-        _narrative.StoryProgressed.AddListener(SayLine);
+        _narrative.StoryProgressed.AddListener(ShowLine);
     }
 
-    private void SayLine(int index)
+    private void Update()
+    {
+        // don't continue if the next line doesn't exist
+        if (GetLine(_narrative.position + 1) == null)
+            return;
+
+        if (Input.GetKeyDown(advanceDialogue))
+        {
+            _narrative.ProgressStory();
+        }
+    }
+
+    private string GetLine(int index)
+    {
+        return _lines.SingleOrDefault(l => l.index == index)?.text;
+    }
+
+    private void ShowLine(int index)
     {
         if (index > _lastIndex)
         {
+            _dialogueView.Clear();
             print("no more dialogue :(");
             return;
         }
-        
+
         var line = _lines.SingleOrDefault(l => l.index == index);
         if (line == null)
             // no dialogue for this index
             return;
 
-        print(string.Format("{0}: {1}", line.speaker, line.text));
+        string message = string.Format("{0}: {1}", line.speaker, line.text);
+        _dialogueView.ShowText(message);
     }
 }

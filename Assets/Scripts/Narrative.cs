@@ -5,23 +5,15 @@ using UnityEngine.Events;
 
 public class Narrative : MonoBehaviour
 {
-    public int Position { get; private set; } = 0;
+    public int position;
 
     public class StoryProgressionEvent : UnityEvent<int> { }
     public UnityEvent<int> StoryProgressed = new StoryProgressionEvent();
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ProgressStory();
-        }
-    }
-
     public void ProgressStory()
     {
-        Position++;
-        StoryProgressed.Invoke(Position);
+        position++;
+        StoryProgressed.Invoke(position);
         //print("story progressed to position " + Position);
     }
 }

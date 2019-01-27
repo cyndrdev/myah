@@ -2167,6 +2167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questView: {fileID: 97882551}
+  dialogueView: {fileID: 1706620773}
 --- !u!1 &285500504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,7 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93461a8849259c448bc835b3b144e7ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerAt: 10
+  triggerAt: 8
   message: lounge door unlocked
   Triggered:
     m_PersistentCalls:
@@ -5769,6 +5770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905d0a7230cd13c40ac29b273e6738d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 0
 --- !u!1 &1157954287
 GameObject:
   m_ObjectHideFlags: 0
@@ -8580,6 +8582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706620774}
+  - component: {fileID: 1706620775}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -8607,6 +8610,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1706620775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706620773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ce1d8bddfca1b43bb2421f4c747fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 10
+  text: {fileID: 907516895}
 --- !u!1 &1715202688
 GameObject:
   m_ObjectHideFlags: 0
@@ -8651,7 +8668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Make Tea
-  start: 9
+  start: 8
   ingredients:
   - {fileID: 273749305}
   - {fileID: 653498533}
@@ -9375,6 +9392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   script: {fileID: 4900000, guid: e24359d4555a9434cb65e5f5b8594b22, type: 3}
+  advanceDialogue: 32
 --- !u!1 &2077436072
 GameObject:
   m_ObjectHideFlags: 0
@@ -10024,7 +10042,7 @@ PrefabInstance:
     - target: {fileID: 2771582736454489035, guid: b95436c6df6f5f24a9a3a17f9305f199,
         type: 3}
       propertyPath: locked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 756994758145649983, guid: b95436c6df6f5f24a9a3a17f9305f199,
         type: 3}
