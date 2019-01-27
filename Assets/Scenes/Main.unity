@@ -7471,6 +7471,7 @@ Transform:
   m_Children:
   - {fileID: 1715202689}
   - {fileID: 1904103084}
+  - {fileID: 768806848}
   m_Father: {fileID: 1231302068}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7532,7 +7533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93461a8849259c448bc835b3b144e7ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerAt: 8
+  triggerAt: 9
   message: lounge door unlocked
   Triggered:
     m_PersistentCalls:
@@ -9720,6 +9721,54 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 3.35, y: 6.18}
   m_Direction: 0
+--- !u!1 &768806847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768806848}
+  - component: {fileID: 768806849}
+  m_Layer: 0
+  m_Name: ChangeMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768806848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768806847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 357945099}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768806849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768806847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3006e6f31822db849858c0c7ba0b34cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Change Music
+  start: 11
+  record: {fileID: 1320355645}
+  recordPlayer: {fileID: 1945963123}
+  proximity: 3
 --- !u!1 &791520995
 GameObject:
   m_ObjectHideFlags: 0
@@ -11832,6 +11881,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1320355647}
         m_MethodName: Pickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 768806849}
+        m_MethodName: GetRecord
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14205,7 +14265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Make Tea
-  start: 8
+  start: 9
   falseKettleMessage: Oh no, we can't use this kettle! It's out of date! Better get
     a fresh one.
   ingredients:
@@ -14217,11 +14277,6 @@ MonoBehaviour:
   noodleProximity: 0
   hammer: {fileID: 907862600}
   tea: {fileID: 752041277}
-  Completed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1736626249
 GameObject:
   m_ObjectHideFlags: 0

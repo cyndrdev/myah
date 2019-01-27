@@ -24,7 +24,7 @@ public class MakeTea : MonoBehaviour
     public GameObject hammer;
     public GameObject tea;
 
-    public UnityEvent Completed = new UnityEvent();
+    //public UnityEvent Completed = new UnityEvent();
 
     private QuestView _questView;
     private DialogueView _dialogueView;
@@ -49,6 +49,8 @@ public class MakeTea : MonoBehaviour
     {
         if (index == start)
         {
+            _narrative.ProgressStory();
+
             _stage = Stage.GatherIngredients;
             Game.Instance.UI.ShowQuestView();
             _questView.SetTitle(title);
@@ -168,8 +170,11 @@ public class MakeTea : MonoBehaviour
             _tea.transform.localPosition = Vector3.zero;
             _tea.GetComponent<Rigidbody2D>().simulated = false;
 
-            _stage = Stage.Completed;
             Game.Instance.UI.HideQuestView();
+
+            _stage = Stage.Completed;
+            _narrative.ProgressStory();
+            //Completed.Invoke();
         }
     }
 

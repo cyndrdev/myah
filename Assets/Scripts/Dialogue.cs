@@ -45,10 +45,12 @@ public class Dialogue : MonoBehaviour
         _narrative.StoryProgressed.AddListener(ShowLine);
     }
 
+    private int _dialogueIndex;
     private void Update()
     {
         // don't continue if the next line doesn't exist
-        if (GetLine(_narrative.position + 1) == null)
+        if (_narrative.position != 0 && 
+            GetLine(_narrative.position) == null)
             return;
 
         if (Input.GetKeyDown(advanceDialogue))
