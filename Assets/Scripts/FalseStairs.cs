@@ -14,5 +14,6 @@ public class FalseStairs : MonoBehaviour
     public void Fall()
     {
         _collider.enabled = false;
+        Destroy(gameObject, 2.5f);
     }
 }
