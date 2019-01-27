@@ -1688,7 +1688,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58dab823420f2479ef0d35b5b4bdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moodChanges: []
+  moodChanges:
+  - mood: 0
+    index: 1
+  - mood: 2
+    index: 2
+  - mood: 0
+    index: 4
+  - mood: 2
+    index: 13
+  - mood: 1
+    index: 16
+  - mood: 0
+    index: 20
+  - mood: 1
+    index: 21
+  - mood: 0
+    index: 25
+  - mood: 2
+    index: 28
+  - mood: 0
+    index: 29
+  - mood: 1
+    index: 35
+  - mood: 0
+    index: 45
+  - mood: 2
+    index: 47
+  - mood: 0
+    index: 49
+  - mood: 1
+    index: 59
+  - mood: 0
+    index: 62
+  - mood: 2
+    index: 77
+  - mood: 0
+    index: 78
   smile: {fileID: 21300000, guid: 68dc20afce34c3b4abef6fdae2cf2b73, type: 3}
   surprise: {fileID: 21300000, guid: af79283ce769e0a4780d2dc7730b40ff, type: 3}
 --- !u!1 &127849387
@@ -7734,7 +7770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Give Noodle a Book!
-  start: 68
+  start: 75
   books:
   - {fileID: 1280057130}
   - {fileID: 1682608646}
@@ -9198,7 +9234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4000244, y: 11.600006}
+  m_AnchoredPosition: {x: 4.399994, y: 11.600006}
   m_SizeDelta: {x: -234.6, y: 36.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540980073
@@ -14285,7 +14321,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58dab823420f2479ef0d35b5b4bdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moodChanges: []
+  moodChanges:
+  - mood: 1
+    index: 14
+  - mood: 0
+    index: 16
+  - mood: 1
+    index: 19
+  - mood: 0
+    index: 26
+  - mood: 1
+    index: 34
+  - mood: 0
+    index: 41
+  - mood: 2
+    index: 48
+  - mood: 0
+    index: 50
   smile: {fileID: 21300000, guid: 68dc20afce34c3b4abef6fdae2cf2b73, type: 3}
   surprise: {fileID: 21300000, guid: af79283ce769e0a4780d2dc7730b40ff, type: 3}
 --- !u!1 &1320355645
