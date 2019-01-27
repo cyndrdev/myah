@@ -1,3 +1,6 @@
-1-8	dialogue
-9-10	make tea
-11-12	change music
+1-29	act 1
+30-31	change music
+32	act 2
+33-34	tea
+35	act 3
+36-37	book
