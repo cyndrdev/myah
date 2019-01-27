@@ -66,6 +66,9 @@ public class ChangeMusic : MonoBehaviour
     // run when the player gets the record from the frame   
     public void GetRecord()
     {
+        if (_stage != Stage.FindRecord)
+            return;
+
         _stage = Stage.PlayRecord;
         _questView.SetQuestItems(new[] { "Play record" });
     }
