@@ -1,5 +1,9 @@
 # Make Yourself At Home!
-**Make Yourself At Home!** is a game of some description, made by Cinder Foster-Smith and Cat Flynn. It was made in 48 hours during Global Game Jam 2019.
+**MYAH!** is a charming story-driven adventure game that tells the story of two friends meeting up for a chat and a cup of tea, with a hint of surrealist humour and bad puns.
+
+## Dev Team
+* Cinder Foster-Smith
+* Cat Flynn
 
 ## Controls
 * A&D or arrow keys: move left/right
