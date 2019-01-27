@@ -7665,8 +7665,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1715202689}
   - {fileID: 768806848}
+  - {fileID: 1715202689}
   - {fileID: 362474463}
   - {fileID: 1904103084}
   m_Father: {fileID: 1231302068}
@@ -7716,7 +7716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Give Noodle a Book!
-  start: 30
+  start: 68
   books:
   - {fileID: 1280057130}
   - {fileID: 1682608646}
@@ -10786,7 +10786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 357945099}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &768806849
 MonoBehaviour:
@@ -10801,7 +10801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Change Music
-  start: 36
+  start: 30
   record: {fileID: 1320355645}
   recordPlayer: {fileID: 1945963123}
   proximity: 3
@@ -16359,7 +16359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 357945099}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1715202690
 MonoBehaviour:
@@ -16374,7 +16374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Make Tea
-  start: 33
+  start: 51
   falseKettleMessage: Oh no, we can't use this kettle! It's out of date! Better get
     a fresh one.
   ingredients:
