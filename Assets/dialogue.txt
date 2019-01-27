@@ -27,5 +27,38 @@
 27	soup	I still have that record we used to blast from when we were teens.
 28	noodle	Ah, that'd be perfect!
 29	soup	Cool, lemme go grab it.
-32	none	act 2 test
-35	none	act 3 test
+32	noodle	Oh, this takes me back... things were easier then.
+33	noodle	I remember going up on the hill to listen to this as a teenager.
+34	soup	Me too, I was there. What's up, Noodle?
+35	noodle	Well... it's hard, at uni. Super hard. I get lonely, and homesick.
+36	noodle	I think a lot about just throwing in the towel and coming back.
+37	noodle	On the one hand I'm sure my parents would support me, but on the other...
+38	noodle	I don't want to feel like I'm being left behind by everyone...
+39	noodle	And I do want to move forward and do things with my life, really, I do!
+40	noodle	Maybe I'm scared of letting go of everything I have here, at home? I don't know.
+41	soup	Just because you're going forward doesn't mean you can't look back once in a while.
+42	soup	It doesn't mean you can't pine for times past, or miss old friends.
+43	noodle	...
+44	soup	Hey, listen. Sit there a minute and I'll go and get you a cup of tea.
+45	noodle	...Thanks, I'd appreciate that, Soup.
+46	soup	No problem! Milk and ten sugars, right?
+47	noodle	What? Ten?
+48	soup	It's a joke, silly, I'm trying to lighten the mood!
+49	noodle	You're a monster.
+50	soup	Hey! Don't worry, I don't even have sugar in this place. Who'd want sugar in tea?
+53	soup	Milk and no sugar, as nature intended.
+54	noodle	Cheers, Soup.
+55	soup	Hey, look. Flying the nest is hard for everyone.
+56	soup	Moving sucks at the best of times, and you went halfway across the country!
+57	soup	But whoever learned anything by playing it safe?
+58	soup	I often wish I'd tried harder to go to uni myself, however I feel about living here.
+59	noodle	I'm not sure you'd like it...
+60	soup	Maybe. Maybe not. I couldn't say for sure, and I'm not sure anyone can.
+61	soup	I guess what I'm trying to say is that growing up was always going to be rocky.
+62	soup	It's not like we're teenagers anymore. Everything's a little more real now, you know?
+63	noodle	Mhm. Yeah, I get that for sure.
+64	soup	If you're really having a rough time, don't feel pressured to stay.
+65	soup	The whole point of growing up is making your own decisions, the people that matter respect that.
+66	soup	But I think you left in the first place for a reason.
+67	soup	And maybe that reason's worth pursuing, just for a little longer.
+
