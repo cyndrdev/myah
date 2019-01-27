@@ -45,5 +45,11 @@ public class RoomWarper : MonoBehaviour
         collider.transform.position = new Vector2(_xPosition, (_floor * 100.0f) + relY);
 
         Camera.main.gameObject.GetComponent<CinematicCamera>().Snap();
+
+        var particles = player.GetComponentInChildren<ParticleSystem>();
+        if (particles == null)
+            return;
+
+        particles.Clear();
     }
 }
