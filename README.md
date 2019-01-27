@@ -1,6 +1,8 @@
 # Make Yourself At Home!
 **MYAH!** is a charming story-driven adventure game that tells the story of two friends meeting up for a chat and a cup of tea, with a hint of surrealist humour and bad puns.
 
+**Note:** You have to press space to begin the game proper.
+
 ## Dev Team
 * Cinder Foster-Smith
 * Cat Flynn
