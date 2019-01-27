@@ -19,7 +19,7 @@ public class Hand : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(interact))
+        if (Input.GetKeyDown(interact) || Input.GetMouseButtonDown(0))
         {
             _interaction.Interact();
         }
