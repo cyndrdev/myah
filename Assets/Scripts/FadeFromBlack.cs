@@ -23,6 +23,10 @@ public class FadeFromBlack : MonoBehaviour
 
         Color _color = new Color(0f, 0f, 0f, 1f - _fadeAmt);
         _image.color = _color;
+
+        if (_fadeAmt == 1f)
+            gameObject.SetActive(false);
+
         _fadeAmt = Mathf.Clamp(_fadeAmt + (Time.deltaTime / _fadeTime), 0f, 1f);
     }
 }
