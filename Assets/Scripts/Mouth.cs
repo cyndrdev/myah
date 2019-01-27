@@ -1,9 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Mouth : MonoBehaviour
 {
+    public enum Mood
+    {
+        Happy,
+        Sad,
+        Surprised
+    }
+
+    [Serializable]
+    public class MoodChange
+    {
+        public Mood mood;
+        public int index;
+    }
+
+    public MoodChange[] moodChanges;
     public Sprite smile;
     public Sprite surprise;
 
@@ -14,7 +31,31 @@ public class Mouth : MonoBehaviour
     {
         _renderer = GetComponent<SpriteRenderer>();
 
+        Game.Instance.Narrative.StoryProgressed.AddListener(UpdateMood);
         //StartCoroutine(Test());
+    }
+
+    private void UpdateMood(int index)
+    {
+        var moodChange = moodChanges
+            .SingleOrDefault(mc => mc.index == index);
+        if (moodChange == null)
+            return;
+
+        switch (moodChange.mood)
+        {
+            case Mood.Happy:
+                Smile();
+                break;
+            case Mood.Sad:
+                Frown();
+                break;
+            case Mood.Surprised:
+                Surprise();
+                break;
+            default:
+                break;
+        }
     }
 
     private IEnumerator Test()

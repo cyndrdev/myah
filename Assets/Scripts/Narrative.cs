@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Narrative : MonoBehaviour
 {
     public int position;
+    public int end;
 
     public class StoryProgressionEvent : UnityEvent<int> { }
     public UnityEvent<int> StoryProgressed = new StoryProgressionEvent();
@@ -15,5 +16,10 @@ public class Narrative : MonoBehaviour
         position++;
         StoryProgressed.Invoke(position);
         //print("story progressed to position " + Position);
+
+        if (position == end)
+        {
+            Game.Instance.UI.GetComponentInChildren<FadeToBlack>().Fade();
+        }
     }
 }

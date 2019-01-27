@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &24102996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1688,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58dab823420f2479ef0d35b5b4bdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moodChanges:
+  - mood: 0
+    index: 1
+  - mood: 2
+    index: 2
+  - mood: 0
+    index: 4
+  - mood: 2
+    index: 13
+  - mood: 1
+    index: 16
+  - mood: 0
+    index: 20
+  - mood: 1
+    index: 21
+  - mood: 0
+    index: 25
+  - mood: 0
+    index: 28
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
+  - mood: 2
+    index: 2
   smile: {fileID: 21300000, guid: 68dc20afce34c3b4abef6fdae2cf2b73, type: 3}
   surprise: {fileID: 21300000, guid: af79283ce769e0a4780d2dc7730b40ff, type: 3}
 --- !u!1 &127849387
@@ -7733,7 +7775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Give Noodle a Book!
-  start: 68
+  start: 75
   books:
   - {fileID: 1280057130}
   - {fileID: 1682608646}
@@ -8210,6 +8252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &467400736
 GameObject:
   m_ObjectHideFlags: 0
@@ -8710,6 +8753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &508949055
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,6 +9129,7 @@ GameObject:
   - component: {fileID: 530167944}
   - component: {fileID: 530167945}
   - component: {fileID: 530167943}
+  - component: {fileID: 530167946}
   m_Layer: 0
   m_Name: Fader
   m_TagString: Untagged
@@ -9161,6 +9206,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeTime: 1.5
+--- !u!114 &530167946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530167941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29d6637c5bb3da47bdb044ea5ccc5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeTime: 0
 --- !u!1 &540980071
 GameObject:
   m_ObjectHideFlags: 0
@@ -10499,6 +10557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &717586472
 GameObject:
   m_ObjectHideFlags: 0
@@ -10694,6 +10753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &722828220
 GameObject:
   m_ObjectHideFlags: 0
@@ -12707,6 +12767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &1134806100
 GameObject:
   m_ObjectHideFlags: 0
@@ -13133,6 +13194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+  end: 79
 --- !u!1 &1157954287
 GameObject:
   m_ObjectHideFlags: 0
@@ -13434,6 +13496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &1188246490
 GameObject:
   m_ObjectHideFlags: 0
@@ -14184,6 +14247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &1304513021
 GameObject:
   m_ObjectHideFlags: 0
@@ -14276,6 +14340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58dab823420f2479ef0d35b5b4bdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moodChanges: []
   smile: {fileID: 21300000, guid: 68dc20afce34c3b4abef6fdae2cf2b73, type: 3}
   surprise: {fileID: 21300000, guid: af79283ce769e0a4780d2dc7730b40ff, type: 3}
 --- !u!1 &1320355645
@@ -16594,6 +16659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &1686768896
 GameObject:
   m_ObjectHideFlags: 0
@@ -17720,6 +17786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &1814467536
 GameObject:
   m_ObjectHideFlags: 0
@@ -18722,6 +18789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1 &2117427092
 GameObject:
   m_ObjectHideFlags: 0
@@ -19699,6 +19767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4cc278efdb7419f5b17097b00ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: 
 --- !u!1001 &2771582735197069964
 PrefabInstance:
   m_ObjectHideFlags: 0
