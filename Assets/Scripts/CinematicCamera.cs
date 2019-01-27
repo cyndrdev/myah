@@ -45,6 +45,7 @@ public class CinematicCamera : MonoBehaviour
 
         _zAmount = transform.position.z;
         UpdateWobble();
+        Snap();
     }
 
     void LateUpdate()
