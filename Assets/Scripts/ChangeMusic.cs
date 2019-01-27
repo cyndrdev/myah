@@ -55,6 +55,8 @@ public class ChangeMusic : MonoBehaviour
         {
             _stage = Stage.FindRecord;
 
+            _narrative.ProgressStory();
+
             Game.Instance.UI.ShowQuestView();
             _questView.SetTitle(title);
             _questView.SetQuestItems(new[] { "Find record" });
