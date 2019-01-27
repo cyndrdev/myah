@@ -16,10 +16,5 @@ public class Narrative : MonoBehaviour
         position++;
         StoryProgressed.Invoke(position);
         //print("story progressed to position " + Position);
-
-        if (position == end)
-        {
-            Game.Instance.UI.GetComponentInChildren<FadeToBlack>().Fade();
-        }
     }
 }

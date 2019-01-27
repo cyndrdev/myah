@@ -19,6 +19,7 @@ public class FadeFromBlack : MonoBehaviour
         _image = gameObject.GetComponent<Image>();
         _narrative = Game.Instance.Narrative;
         _endPoint = _narrative.end;
+        Debug.Log(_endPoint);
         _fadeAmt = 0f;
     }
 
